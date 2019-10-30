@@ -39,3 +39,72 @@ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 cd ~/catkin_ws && catkin_make
 ~~~
 
+
+## Driving a Virtual Robot in Gazebo
+
+~~~
+roscore
+cd catkin_ws$ source devel/setup.bash
+export TURTLEBOT3_MODEL=waffle_pi
+roslaunchturtlebot3_gazebo turtlebot3_world.launch
+~~~
+
+
+* If you met following error; [Err] [REST.cc:205] Error in REST requestLibcurl: (51) SSL : no alternative certificate subject name matches target host name ‘api.ignitionfu-el.org’
+
+~~~
+gedit ~/.ignition/fuel/config.yaml
+~~~
+* Edit url: https://api.ignitionfuel.org ->url: https://api.ignitionrobotics.org
+
+~~~
+cd catkin_ws
+source devel/setup.bash
+export TURTLEBOT3_MODEL=waffle_pi
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+~~~
+
+~~~
+cd catkin_ws
+source devel/setup.bash
+export TURTLEBOT3_MODEL=waffle_pi
+roslaunch turtlebot3_gazebo turtlebot3_gazebo_rviz.launch
+~~~
+
+## SLAM in GAZEBO
+* I recommend quit all previous window including rosecore
+
+
+* execute Gazebo
+~~~
+cd catkin_ws
+source devel/setup.bash
+export TURTLEBOT3_MODEL=waffle_pi
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
+~~~
+
+* execute SLAM
+In this case, we use gmapping that is gemeral slam package
+~~~
+cd catkin_ws
+source devel/setup.bash
+export TURTLEBOT3_MODEL=waffle_pi
+roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+~~~
+![slam](./D://1.png)
+* execute keypad
+~~~
+cd catkin_ws
+source devel/setup.bash
+export TURTLEBOT3_MODEL=waffle_pi
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+* Map output
+~~~
+cd catkin_ws
+source devel/setup.bas
+rosrun map_server map_saver -f ~/map
+~~~
+
+## rqt_graph
+
