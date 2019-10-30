@@ -98,7 +98,7 @@ cd catkin_ws
 source devel/setup.bash
 export TURTLEBOT3_MODEL=waffle_pi
 roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
-
+~~~
 * Map output
 ~~~
 cd catkin_ws
@@ -107,4 +107,4 @@ rosrun map_server map_saver -f ~/map
 ~~~
 
 ## rqt_graph
-
+![](./image/22.png)
