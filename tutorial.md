@@ -108,3 +108,7 @@ rosrun map_server map_saver -f ~/map
 
 ## rqt_graph
 ![](./image/22.png)
+
+## rosnode list
+![](./image/22.png)
+
