@@ -109,6 +109,25 @@ rosrun map_server map_saver -f ~/map
 ## rqt_graph
 ![](./image/22.png)
 
-## rosnode list
-![](./image/22.png)
+## Rqt->Topic Monitor
+![](./image/3.png)
 
+## Navigation in Gazebo
+* I recommend quit all previous window including rosecore
+
+
+* activate Gazebo
+~~~
+cd catkin_ws
+source devel/setup.bash
+export TURTLEBOT3_MODEL=waffle_pi
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
+~~~
+
+~~~
+cd catkin_ws
+source devel/setup.bash
+export TURTLEBOT3_MODEL=waffle_pi
+roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml
+~~~
+![](./image/4.png)
